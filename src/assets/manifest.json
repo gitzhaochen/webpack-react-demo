@@ -1,0 +1,32 @@
+{
+    "short_name": "Miks",
+    "name": "Miks",
+    "icons": [
+        {
+            "src": "./images/logo-96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "./images/logo-144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "./images/logo-188.png",
+            "type": "image/png",
+            "sizes": "188x188"
+        },
+        {
+            "src": "./images/logo-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color":"#fff",
+    "orientation": "portrait"
+}
