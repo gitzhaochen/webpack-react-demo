@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import { Select } from 'antd';
-const Option = Select.Option;
 class Template extends Component {
     constructor(props) {
         super(props);
@@ -30,13 +28,13 @@ class Template extends Component {
         if(!options.length)return null;
         let code=this.state.code
         return (
-           <Select
-                defaultValue={code}
+           <select
+                value={code}
                 style={{width: 120}}
                 onChange={this.handleChange}
             >
-                {options.map(item => <Option value={item.code} key={item.code}>{item.name}</Option>)}
-            </Select>
+                {options.map(item => <option value={item.code} key={item.code}>{item.name}</option>)}
+            </select>
         );
     }
 }
