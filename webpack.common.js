@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
-        app: './src/main.js'
+        app: ['@babel/polyfill', './src/main.js']
     },
     output: {
         filename: '[name].[chunkhash:8].js',
@@ -45,8 +45,7 @@ module.exports = {
             "jQuery": "jquery"
         }),
         new CopyWebpackPlugin([
-            {from: 'src/assets', to: 'assets'},
-            // {from:'src/sw.js'},
+            {from: 'src/assets', to: 'assets'}
         ])
 
 

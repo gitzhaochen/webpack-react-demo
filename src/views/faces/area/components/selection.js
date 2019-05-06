@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
+
 class Template extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            code:''
-        }
+    state = {
+        code: ''
     }
-    handleChange=()=>{
+    handleChange = () => {
         console.log(event)
-        let code=event.target.value
-        let type=this.props.type
-        this.props.handleChange(type,code)
+        let code = event.target.value
+        let type = this.props.type
+        this.props.handleChange(type, code)
         this.setState({
             code
         })
     }
+
     componentWillReceiveProps(nextProps) {
         if (JSON.stringify(nextProps.options) !== JSON.stringify(this.props.options)) {
             console.log('options-update')
@@ -23,12 +22,13 @@ class Template extends Component {
             })
         }
     }
+
     render() {
         let options = this.props.options;
-        if(!options.length)return null;
-        let code=this.state.code
+        if (!options.length) return null;
+        let code = this.state.code
         return (
-           <select
+            <select
                 value={code}
                 style={{width: 120}}
                 onChange={this.handleChange}

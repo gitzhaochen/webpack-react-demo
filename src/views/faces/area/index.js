@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CitySelection from './components/city-selection'
-
+import './index.styl'
 class Template extends Component {
     state = {
         datas: [],
@@ -13,7 +13,7 @@ class Template extends Component {
 
     render() {
         return (
-            <div>
+            <div className="page">
                 <CitySelection level={3}/>
                 <CitySelection level={4}/>
                 <CitySelection level={5}/>

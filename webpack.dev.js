@@ -68,11 +68,6 @@ const options = merge(common, {
         }
     },
     plugins: [
-        // new workboxPlugin.InjectManifest({
-        //     swSrc:path.join('src', 'sw-dev.js'),//本地sw模版
-        //     swDest:'sw.js',//生成文件 默认dist目录
-        //     importWorkboxFrom: 'local'//本地加载workbox库，默认是谷歌的地址，需要翻墙的
-        // }),
         new webpack.DllReferencePlugin({
             context: __dirname,
             manifest: require('./dist/vendor.manifest.json'),
@@ -88,8 +83,13 @@ const options = merge(common, {
             favicon: 'src/favicon.ico',
             hash: true
         }),
-        // new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+        // new workboxPlugin.InjectManifest({
+        //     swSrc: path.join('src', 'sw-dev.js'),//本地sw模版
+        //     swDest: 'sw.js',//生成文件 默认dist目录
+        //     importWorkboxFrom: 'local'//本地加载workbox库，默认是谷歌的地址，需要翻墙的
+        // })
     ]
 });
 module.exports = options;

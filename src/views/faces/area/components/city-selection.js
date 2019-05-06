@@ -154,14 +154,6 @@ class Template extends Component {
                     city2,
                     city3,
                     city4,]}></Selected>
-                <style jsx>{`
-                    .city-selection {
-                        margin:20px;
-                        display:flex;
-                        align-item:center;
-
-                    }
-                 `}</style>
             </div>
 
         );

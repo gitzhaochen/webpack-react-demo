@@ -2,13 +2,10 @@ import React, {Component} from 'react';
 import './stage.styl'
 
 class Template extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            ctx: null,
-            points: props.points
-        };
-    }
+    state = {
+        ctx: null,
+        points: this.props.points
+    };
 
     draw_point = () => {
         //画点

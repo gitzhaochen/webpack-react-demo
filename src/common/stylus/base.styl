@@ -1,11 +1,13 @@
+@import "//at.alicdn.com/t/font_1077583_pphsn6byrvr.css"
 @import "variable.styl"
 
+
 body, html {
-  font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family PingFang SC, Tahoma, Helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei, sans-serif
   user-select text
   -webkit-tap-highlight-color transparent
   font-size $text-size-sm
-  color #333
+  color #222
 }
 
 .no-scroll {
@@ -26,8 +28,15 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {
   -webkit-box-shadow: 0 0 0 1000px $autofill inset;
 }
 
+.outline-prefect {
+  &:focus:not(:focus-visible) {
+    //tab选中显示轮廓，click没有轮廓 参考https://www.zhangxinxu.com/wordpress/2019/03/css-focus-visible/
+    outline: none
+  }
+}
+
 a {
-  color #333
+  color #222
   text-decoration none
 }
 
@@ -39,20 +48,10 @@ a {
   position absolute
 }
 
-.section {
-  padding 150px 0
-}
-
-.t-center {
-  text-align center
-}
-
-.t-right {
-  text-align right
-}
-
-.bgf {
-  background-color #fff
+.w-1040 {
+  width 1040px
+  margin 0 auto
+  box-sizing border-box
 }
 
 .container {
@@ -61,34 +60,8 @@ a {
   box-sizing border-box
 }
 
-.w-560 {
-  margin 0 auto
-  width 560px
-  box-sizing border-box
-}
-
-.w-960 {
-  margin 0 auto
-  width 960px
-  box-sizing border-box
-}
-
-.w-636 {
-  margin 0 auto
-  width 636px
-  box-sizing border-box
-}
-
-.w-256 {
-  margin 0 auto
-  width 256px
-  box-sizing border-box
-}
 
 //page css
-#app {
-
-}
 
 .page {
   padding 66px 0 40px
@@ -98,11 +71,9 @@ a {
   padding 24px
 }
 
-.page-lg-padding {
-  padding 48px 32px
-}
 
-.panel-scroll {
+//滚动条美化
+.zmx-scroll {
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
@@ -126,16 +97,18 @@ a {
 }
 
 
+/****** 屏幕尺寸小于1000 css 覆盖修改*****/
+
 @media only screen and (max-width $screen-sm-min) {
   .page {
-    padding 56px 0 40px
+    padding 56px 0 20px
   }
 
-  .page-padding, .page-lg-padding {
+  .page-padding {
     padding 4% 3%
   }
 
-  .container, .w-560, .w-960, .w-636, .w-256 {
+  .w-1040, .container {
     width 100%
   }
 }

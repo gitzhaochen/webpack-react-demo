@@ -88,7 +88,7 @@ class Template extends Component {
         console.log('animation-rendor')
         let canvas = this.state.canvas
         return (
-            <div className="board">
+            <div className="board page">
                 <Stage handler_emit_ctx={this.handler_emit_ctx} width={canvas.width} height={canvas.height}
                        points={this.state.points}/>
                 <div className="bot">

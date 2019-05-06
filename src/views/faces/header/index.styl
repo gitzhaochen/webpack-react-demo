@@ -1,0 +1,146 @@
+.face-header {
+  background $bg
+  position fixed
+  z-index 3
+  width 100%
+  left 0
+  top 0
+  border-bottom 1px solid rgba(0, 0, 0, 0.05)
+  box-sizing border-box
+  display flex
+  align-items center
+  &.light-bg {
+    background $light-bg
+  }
+  .face-header-container {
+    width 100%
+    height 46px
+    display flex
+    align-items center
+    justify-content center
+
+    .l-side, .r-side {
+      width 220px
+    }
+
+    .l-side {
+      .logo-box {
+        display inline-flex
+        align-items center
+
+        .logo {
+          font-size 20px
+          cursor pointer
+          color $c1
+        }
+
+        .desc {
+          margin-left 12px
+          font-size 12px
+          color #777
+        }
+      }
+
+    }
+
+    .r-side {
+      display flex
+      justify-content flex-end
+
+      .navbar-area {
+        display inline-flex
+        align-items center
+      }
+
+      .account-actions {
+        display inline-flex
+        align-items center
+
+        .action {
+          color #666
+          margin-left 20px
+          font-size 14px
+          &.router-link-active{
+            color $c1
+          }
+          &:hover {
+            color $c1
+          }
+        }
+      }
+    }
+
+    .c-content {
+      margin 0 20px
+      width 560px
+    }
+
+  }
+}
+
+@media only screen and (max-width $screen-sm-min) {
+  .face-header {
+    background $cf
+    .face-header-container {
+      justify-content space-between
+      .l-side, .r-side {
+        width auto
+      }
+
+      .l-side {
+        .logo-box {
+          padding-left 10px
+
+          .desc {
+            display none
+          }
+        }
+      }
+      .r-side {
+        padding-right 10px
+
+        .account-actions {
+          .action {
+            margin-left 16px
+          }
+        }
+      }
+
+      .c-content {
+        width auto
+        margin 0 10px
+      }
+    }
+  }
+
+
+}
+
+@media only screen and (max-width $screen-xs-min) {
+  .face-header {
+    .face-header-container {
+      .logo-box {
+        padding-left 4px
+
+        .logo {
+          font-size 18px
+        }
+      }
+
+      .r-side {
+        padding-right 4px
+
+        .navbar-area {
+        }
+
+        .account-actions {
+          .action {
+            margin-left 10px
+          }
+        }
+      }
+    }
+  }
+
+
+}
